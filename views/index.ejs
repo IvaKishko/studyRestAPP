@@ -1,0 +1,44 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task App</title>
+  </head>
+
+  <body>
+    <h1>May Node and Express be with you.</h1>
+
+    <form action="/quotes" method="POST">
+      <input type="text" placeholder="name" name="task" />
+      <input type="text" placeholder="quote" name="description" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <% for(var i = 0; i < task.length; i++) {%>
+        <li class="quote">
+          <!-- Output name from the iterated quote object -->
+          <span><%= task[i].task %></span>:
+          <!-- Output quote from the iterated quote object -->
+          <span><%= task[i].description %></span>
+        </li>
+      <% } %>
+
+      <div>
+        <h2>Change Study task to More Important One</h2>
+        <p>
+          Change the first study task!
+        </p>
+        <button id="update-button">Important task</button>
+      </div>
+      <div>
+        <h2>No More Rest</h2>
+        <p>
+          Delete rest task. Does nothing if there are no more Rest tasks!
+        </p>
+        <button id="delete-button">Enough Rest!</button>
+      </div>
+      <div id="message"></div>
+      <script src="../public/main.js"></script>
+  </body>
+</html>
